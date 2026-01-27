@@ -1,86 +1,404 @@
 # ============================================================
-# Dircolors — Thème sobre apprécié par les développeurs
-# Lisible, non agressif, adapté aux terminaux sombres
+# Dircolors — Thème Pastel Spatial 🪐
+# Inspiré d'EndeavourOS avec couleurs douces pour développeurs
+# Palette : violets, mauves, bleus pastel, verts menthe
+# Optimisé pour terminaux sombres (24-bit color)
 # ============================================================
 
-# --- Types principaux ---
-NORMAL 00
-FILE 00
-DIR 36              # dossiers : cyan doux
-LINK 96             # liens symboliques : cyan clair
-FIFO 33             # pipes : jaune
-SOCK 35             # sockets : magenta
-DOOR 35
-BLK 01;33
-CHR 01;33
-ORPHAN 01;31
-MISSING 01;31
-SETUID 37;41
-SETGID 30;43
-STICKY_OTHER_WRITABLE 30;42
-OTHER_WRITABLE 34;42
-STICKY 37;44
+# NOTE : Ce fichier utilise des codes couleur 256 et RGB
+# Pour activer : eval "$(dircolors ~/.dircolors)"
 
-# --- Permissions / exécution ---
-EXEC 32             # exécutables : vert
-CAPABILITY 01;31
+# --- Types de fichiers de base ---
+NORMAL 00                           # Texte normal
+FILE 38;5;252                       # Fichiers standards : gris très clair
+RESET 0
+
+# --- Répertoires et liens ---
+DIR 38;5;141                        # Dossiers : violet pastel doux (mauve clair)
+LINK 38;5;117                       # Liens symboliques : bleu ciel pastel
 MULTIHARDLINK 00
 
-# --- Archives ---
-*.tar 31
-*.tgz 31
-*.zip 31
-*.gz 31
-*.bz2 31
-*.xz 31
-*.7z 31
-*.rar 31
+# --- Fichiers spéciaux système ---
+FIFO 38;5;180                       # Pipes : beige rosé
+SOCK 38;5;175                       # Sockets : rose poudré
+DOOR 38;5;175                       # Doors : rose poudré
+BLK 38;5;222;48;5;235               # Block device : jaune pastel sur fond sombre
+CHR 38;5;186;48;5;235               # Char device : jaune pâle sur fond sombre
 
-# --- Code / scripts ---
-*.sh 32
-*.bash 32
-*.zsh 32
-*.py 33
-*.js 33
-*.ts 33
-*.go 33
-*.rs 33
-*.c 33
-*.h 33
-*.cpp 33
-*.java 33
+# --- Fichiers orphelins/manquants ---
+ORPHAN 38;5;211;48;5;235            # Liens cassés : rose vif sur fond sombre
+MISSING 38;5;211;48;5;235           # Fichiers manquants : rose vif
 
-# --- Markup / config ---
-*.md 35
-*.rst 35
-*.txt 00
-*.json 36
-*.yml 36
-*.yaml 36
-*.toml 36
-*.ini 36
-*.conf 36
+# --- Permissions spéciales ---
+SETUID 38;5;231;48;5;139            # SUID : blanc sur violet
+SETGID 38;5;231;48;5;104            # SGID : blanc sur bleu violet
+CAPABILITY 38;5;231;48;5;139        # Capabilities : blanc sur violet
 
-# --- Logs / temporaires ---
-*.log 90            # gris discret
-*.tmp 90
-*.bak 90
-*.old 90
-*.swp 90
+# --- Permissions d'écriture ---
+STICKY_OTHER_WRITABLE 38;5;231;48;5;108  # Sticky + writable : blanc sur vert menthe
+OTHER_WRITABLE 38;5;231;48;5;104         # Writable : blanc sur bleu lavande
+STICKY 38;5;231;48;5;139                 # Sticky : blanc sur violet
 
-# --- Images ---
-*.png 35
-*.jpg 35
-*.jpeg 35
-*.gif 35
-*.svg 35
-*.webp 35
+# --- Exécutables ---
+EXEC 38;5;158                       # Exécutables : vert menthe pastel
 
-# --- Audio / vidéo ---
-*.mp3 35
-*.wav 35
-*.flac 35
-*.mp4 35
-*.mkv 35
-*.avi 35
+# ============================================================
+# Extensions de fichiers
+# ============================================================
 
+# --- Archives (violet/mauve) ---
+.tar 38;5;183                       # Violet rosé pastel
+.tgz 38;5;183
+.arc 38;5;183
+.arj 38;5;183
+.taz 38;5;183
+.lha 38;5;183
+.lz4 38;5;183
+.lzh 38;5;183
+.lzma 38;5;183
+.tlz 38;5;183
+.txz 38;5;183
+.tzo 38;5;183
+.t7z 38;5;183
+.zip 38;5;183
+.z 38;5;183
+.dz 38;5;183
+.gz 38;5;183
+.lrz 38;5;183
+.lz 38;5;183
+.lzo 38;5;183
+.xz 38;5;183
+.zst 38;5;183
+.tzst 38;5;183
+.bz2 38;5;183
+.bz 38;5;183
+.tbz 38;5;183
+.tbz2 38;5;183
+.tz 38;5;183
+.deb 38;5;183
+.rpm 38;5;183
+.jar 38;5;183
+.war 38;5;183
+.ear 38;5;183
+.sar 38;5;183
+.rar 38;5;183
+.alz 38;5;183
+.ace 38;5;183
+.zoo 38;5;183
+.cpio 38;5;183
+.7z 38;5;183
+.rz 38;5;183
+.cab 38;5;183
+.wim 38;5;183
+.swm 38;5;183
+.dwm 38;5;183
+.esd 38;5;183
+
+# --- Images (rose pastel) ---
+.jpg 38;5;217                       # Rose saumon pastel
+.jpeg 38;5;217
+.mjpg 38;5;217
+.mjpeg 38;5;217
+.gif 38;5;217
+.bmp 38;5;217
+.pbm 38;5;217
+.pgm 38;5;217
+.ppm 38;5;217
+.tga 38;5;217
+.xbm 38;5;217
+.xpm 38;5;217
+.tif 38;5;217
+.tiff 38;5;217
+.png 38;5;217
+.svg 38;5;217
+.svgz 38;5;217
+.mng 38;5;217
+.pcx 38;5;217
+.webp 38;5;217
+.ico 38;5;217
+
+# --- Vidéos (rose plus prononcé) ---
+.mov 38;5;211
+.mpg 38;5;211
+.mpeg 38;5;211
+.m2v 38;5;211
+.mkv 38;5;211
+.webm 38;5;211
+.ogm 38;5;211
+.mp4 38;5;211
+.m4v 38;5;211
+.mp4v 38;5;211
+.vob 38;5;211
+.qt 38;5;211
+.nuv 38;5;211
+.wmv 38;5;211
+.asf 38;5;211
+.rm 38;5;211
+.rmvb 38;5;211
+.flc 38;5;211
+.avi 38;5;211
+.fli 38;5;211
+.flv 38;5;211
+.gl 38;5;211
+.m2ts 38;5;211
+.divx 38;5;211
+.ogv 38;5;211
+
+# --- Audio (lavande pastel) ---
+.aac 38;5;183
+.au 38;5;183
+.flac 38;5;183
+.m4a 38;5;183
+.mid 38;5;183
+.midi 38;5;183
+.mka 38;5;183
+.mp3 38;5;183
+.mpc 38;5;183
+.ogg 38;5;183
+.opus 38;5;183
+.ra 38;5;183
+.wav 38;5;183
+.oga 38;5;183
+.spx 38;5;183
+.xspf 38;5;183
+
+# --- Documents (bleu pâle) ---
+.pdf 38;5;153
+.ps 38;5;153
+.djvu 38;5;153
+.epub 38;5;153
+.mobi 38;5;153
+
+# --- Bureautique (bleu très pâle) ---
+.doc 38;5;189
+.docx 38;5;189
+.xls 38;5;189
+.xlsx 38;5;189
+.ppt 38;5;189
+.pptx 38;5;189
+.odt 38;5;189
+.ods 38;5;189
+.odp 38;5;189
+
+# --- Code source Shell (vert menthe) ---
+.sh 38;5;158
+.bash 38;5;158
+.zsh 38;5;158
+.fish 38;5;158
+.csh 38;5;158
+.tcsh 38;5;158
+
+# --- Code source Python (vert menthe légèrement plus vif) ---
+.py 38;5;151
+.pyi 38;5;151
+.pyc 38;5;242
+.pyo 38;5;242
+.pyd 38;5;242
+
+# --- Code source JavaScript/TypeScript (jaune pastel) ---
+.js 38;5;228
+.jsx 38;5;228
+.ts 38;5;228
+.tsx 38;5;228
+.mjs 38;5;228
+.cjs 38;5;228
+
+# --- Code source Web (couleurs douces variées) ---
+.html 38;5;217                      # Rose pâle
+.htm 38;5;217
+.css 38;5;153                       # Bleu pâle
+.scss 38;5;153
+.sass 38;5;153
+.less 38;5;153
+.vue 38;5;158                       # Vert menthe
+.svelte 38;5;158
+
+# --- Code source compilé (beige/or pastel) ---
+.c 38;5;222
+.h 38;5;222
+.cpp 38;5;222
+.hpp 38;5;222
+.cc 38;5;222
+.cxx 38;5;222
+.c++ 38;5;222
+.h++ 38;5;222
+.hh 38;5;222
+
+# --- Code source Rust (orange pastel) ---
+.rs 38;5;216
+
+# --- Code source Go (cyan pastel) ---
+.go 38;5;117
+
+# --- Code source Java/Kotlin (orange pâle) ---
+.java 38;5;216
+.kt 38;5;216
+.kts 38;5;216
+
+# --- Code source Ruby (rose vif pastel) ---
+.rb 38;5;211
+
+# --- Code source PHP (violet pâle) ---
+.php 38;5;183
+
+# --- Code source divers ---
+.pl 38;5;117                        # Perl : cyan
+.pm 38;5;117
+.lua 38;5;153                       # Lua : bleu
+.vim 38;5;158                       # Vim : vert
+.r 38;5;117                         # R : cyan
+.R 38;5;117
+.swift 38;5;216                     # Swift : orange
+.scala 38;5;211                     # Scala : rose
+
+# --- Markup et données (bleu ciel pastel) ---
+.md 38;5;117
+.markdown 38;5;117
+.rst 38;5;117
+.tex 38;5;117
+.adoc 38;5;117
+.org 38;5;117
+
+# --- Configuration et données (cyan pastel) ---
+.json 38;5;153
+.yaml 38;5;153
+.yml 38;5;153
+.toml 38;5;153
+.ini 38;5;153
+.conf 38;5;153
+.config 38;5;153
+.cfg 38;5;153
+.xml 38;5;153
+.properties 38;5;153
+.env 38;5;153
+
+# --- Fichiers de build (violet très pâle) ---
+.makefile 38;5;189
+.Makefile 38;5;189
+.cmake 38;5;189
+.gradle 38;5;189
+.rake 38;5;189
+
+# --- Fichiers Git (vert pastel) ---
+.gitignore 38;5;151
+.gitattributes 38;5;151
+.gitmodules 38;5;151
+
+# --- Fichiers npm/node (vert menthe) ---
+.npmrc 38;5;158
+.nvmrc 38;5;158
+package.json 38;5;158
+package-lock.json 38;5;242
+
+# --- Docker (bleu pastel) ---
+.dockerfile 38;5;153
+.Dockerfile 38;5;153
+.dockerignore 38;5;242
+docker-compose.yml 38;5;153
+
+# --- README et documentation (jaune très pâle) ---
+README 38;5;229
+README.md 38;5;229
+README.txt 38;5;229
+LICENSE 38;5;229
+COPYING 38;5;229
+AUTHORS 38;5;229
+CONTRIBUTORS 38;5;229
+CHANGELOG 38;5;229
+TODO 38;5;229
+
+# --- Logs et temporaires (gris discret) ---
+.log 38;5;242                       # Gris moyen
+.tmp 38;5;240                       # Gris foncé
+.temp 38;5;240
+.bak 38;5;240
+.backup 38;5;240
+.old 38;5;240
+.orig 38;5;240
+.swp 38;5;240
+.swo 38;5;240
+.cache 38;5;240
+*~ 38;5;240
+.DS_Store 38;5;240
+Thumbs.db 38;5;240
+
+# --- Fichiers cachés système (gris très sombre) ---
+.localized 38;5;238
+.CFUserTextEncoding 38;5;238
+
+# --- Bases de données (violet moyen) ---
+.db 38;5;183
+.sqlite 38;5;183
+.sqlite3 38;5;183
+.sql 38;5;183
+
+# --- Certificats et clés (rouge pastel pour attirer l'attention) ---
+.pem 38;5;217;1
+.key 38;5;217;1
+.crt 38;5;217;1
+.cer 38;5;217;1
+.p12 38;5;217;1
+.pfx 38;5;217;1
+.pub 38;5;217;1
+
+# --- Polices (rose doux) ---
+.ttf 38;5;217
+.otf 38;5;217
+.woff 38;5;217
+.woff2 38;5;217
+
+# ============================================================
+# Palette de référence (codes 256 couleurs utilisés)
+# ============================================================
+# 
+# Violets/Mauves :
+#   141 - Mauve clair (dossiers)
+#   139 - Violet moyen
+#   183 - Lavande pastel (archives, audio)
+#   175 - Rose poudré (sockets)
+#
+# Bleus :
+#   117 - Bleu ciel pastel (liens, markup)
+#   153 - Bleu pâle (config, documents)
+#   189 - Bleu très pâle (bureautique)
+#   104 - Bleu violet (permissions)
+#
+# Verts :
+#   158 - Vert menthe (shell, exécutables)
+#   151 - Vert menthe vif (Python)
+#   108 - Vert pastel (sticky)
+#
+# Roses :
+#   217 - Rose saumon pastel (images)
+#   211 - Rose plus vif (vidéos, Ruby)
+#
+# Jaunes/Or :
+#   228 - Jaune pastel (JS/TS)
+#   222 - Beige/or pastel (C/C++)
+#   229 - Jaune très pâle (README)
+#
+# Orange :
+#   216 - Orange pastel (Rust, Java)
+#
+# Gris :
+#   252 - Gris très clair (fichiers normaux)
+#   242 - Gris moyen (logs)
+#   240 - Gris foncé (tmp)
+#   238 - Gris très foncé (système)
+#
+# ============================================================
+# Installation et activation
+# ============================================================
+#
+# 1. Copier ce fichier : cp _dircolors ~/.dircolors
+# 2. Ajouter à ~/.bashrc ou ~/.zshrc :
+#
+#    if [ -f ~/.dircolors ]; then
+#        eval "$(dircolors ~/.dircolors)"
+#    fi
+#
+# 3. Recharger : source ~/.bashrc  (ou source ~/.zshrc)
+#
+# Vérification : ls --color=auto
+#
+# ============================================================
