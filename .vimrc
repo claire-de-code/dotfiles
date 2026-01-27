@@ -55,3 +55,11 @@ nnoremap k gk
 " --- Thème ---
 colorscheme monokai_minimal
 
+" --- Explorateur de fichier ---
+let g:netrw_banner = 0        " enlève la bannière
+let g:netrw_liststyle = 3    " vue en arbre
+let g:netrw_browse_split = 2 " ouvre les fichiers dans la fenêtre existante
+let g:netrw_altv = 1         " split à droite
+
+nnoremap <leader>e :Vexplore<CR>
+
